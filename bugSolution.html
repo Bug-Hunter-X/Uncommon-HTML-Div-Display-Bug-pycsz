@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").style.display = "none"; //First hide the element
+      document.getElementById("myDiv").innerHTML = ""; //Then clear the content
+      //This solves the bug by ensuring the div's content is not permanently removed.
+      //To reproduce the solution, click the button, then try to make the div visible again.
+    }
+  </script>
+</body>
+</html>
